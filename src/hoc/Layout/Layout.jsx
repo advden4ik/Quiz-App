@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Layout.module.css';
 import MenuToggle from '../../components/Navigation/MenuToggle/MenuToggle';
 import Drawer from '../../components/Navigation/Drawer/Drawer';
+import { connect } from 'react-redux';
 
 const Layout = props => {
 
@@ -17,6 +18,7 @@ const Layout = props => {
             <Drawer
                 isOpen={isOpen}
                 onClose={handleToggleMenu}
+                isAuthenticated={props.isAuthenticated}
             />
 
             <MenuToggle
@@ -31,4 +33,8 @@ const Layout = props => {
     );
 };
 
-export default Layout;
+const mapStateToProps = (state) => ({
+    isAuthenticated: !!state.auth.token
+})
+
+export default connect(mapStateToProps)(Layout);
