@@ -7,4 +7,4 @@
     login: test@mail.ru
     password: 123456
 
-### [Demo](https://quiz-app-firebase.herokuapp.com/)
+### [Demo](https://quiz-app-12345.web.app/)
